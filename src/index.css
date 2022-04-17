@@ -11,3 +11,90 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+html, body, #root{
+  height:100%;
+  width: 100%;
+}
+/***Common styles***/
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #424242;
+  text-align: center;
+}
+
+.page-center{
+  display: flex;
+  background-color: #fff9c4;
+  position: relative;
+  width: 80%;
+  height: 80%;
+  animation: 1s slide-in;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.col-1,.col-2{
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.col-1{
+  background-color: #fff9c4;
+}
+
+.col-2{ /* Reference code*/
+  background-color: #e0dcb4;
+  padding: 0 3%;
+  overflow: scroll;
+}
+
+.code-snippet-html{
+  white-space: break-spaces;
+  font-size: larger;
+  color: firebrick;
+}
+
+.code-snippet-js{
+  white-space: break-spaces;
+}
+
+@keyframes slide-in{
+  0%{
+    opacity: 0.3;
+  },
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-top{
+    0%{
+      opacity: 0.3;
+      transform: scaleY(0);
+    },
+    100%{
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+
+.next-btn, .prev-btn{
+  position: absolute;
+  text-decoration: none;
+  font-size: 3rem;
+}
+
+.next-btn {
+  right: 0;
+  top: 50%;
+}
+
+.prev-btn{
+  left: 0;
+  top: 50%;
+}
