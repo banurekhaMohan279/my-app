@@ -1,6 +1,5 @@
 import {useState, useMemo, useEffect} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 
 //https://dmitripavlutin.com/react-throttle-debounce/
 // now input is uncontrolled - coz if we use both onchange and onkeyup - multiple calls triggering despite debounce
