@@ -1,3 +1,5 @@
+import Template from './Template.js';
+
 export default function Hide(){
     //Have a mock list of items to be displayed
     //Have a mock user object
@@ -24,7 +26,7 @@ export default function Hide(){
       }
     }
     return(
-        <div>
+        <Template Idx = 'Hide'>
             <ul>
             {items.map(item => {
                 return(
@@ -35,6 +37,6 @@ export default function Hide(){
                 )
             })}
             </ul>
-        </div>
+        </Template>
     )
 }

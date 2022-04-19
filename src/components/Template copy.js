@@ -1,18 +1,21 @@
+//Keeping this file for an - Example of importing child to root component i.e., fixed layout - components inside change
+
 import { RouteOrder } from "../routeOrder";
 import Suggestions from "./Suggestions";
 import Hide from "./Hide";
 //import Suggestions from "./Suggestions";
 import {useNavigate} from 'react-router-dom';
 
-export default function Template({children,Idx}){
-  /*const components = { // since dynamic component names dont accept a string directly
+export default function Template(props){
+  const components = { // since dynamic component names dont accept a string directly
     Home: '',
     Suggestions: Suggestions,
-    Hide: Hide
-  };*/
+    Hide: Hide,
+    Auth: Auth
+  };
   
-  let currIdx = RouteOrder.indexOf(Idx);
-  //let CurrComponent = components[props.spec || 'Home'];
+  let currIdx = RouteOrder.indexOf(`${props.spec}`);
+  let CurrComponent = components[props.spec || 'Home'];
   let navigate = useNavigate();
 
   function onPrevButtonClick(){
@@ -27,8 +30,8 @@ export default function Template({children,Idx}){
     <div className = "page-center">
       <div className = "col-1">
         <a className = "prev-btn" onClick = {onPrevButtonClick}> &larr; </a>
-        
-        <main>{children}</main>
+        <h3>{props.spec}</h3>
+        <CurrComponent/>
       </div>
       <div className = "col-2">
         <a className = "next-btn" onClick = {onNextButtonClick}> &rarr; </a>

@@ -14,9 +14,8 @@ export default function RoutesMap() {
         <Suspense fallback = {<div> Loading! </div>}>
             <Routes>
               <Route exact path = '/' element = {<Home/>} />
-              <Route path = '/Suggestions' element = {<Suggestions/>} />
-              <Route path = '/Hide' element = {<Hide/>} />
-             {/* <Route path = '/Hide' element = {<Template spec = 'Hide'/>}/> */}
+              <Route path = '/Suggestions' element = {<Template spec = 'Suggestions'/>} />
+              <Route path = '/Hide' element = {<Template spec = 'Hide'/>}/>
             </Routes>
         </Suspense>
       </Router>

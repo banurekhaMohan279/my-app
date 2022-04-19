@@ -1,5 +1,6 @@
 import {useState, useMemo, useEffect} from 'react';
 import '../App.css';
+import Template from './Template.js';
 
 //https://dmitripavlutin.com/react-throttle-debounce/
 // now input is uncontrolled - coz if we use both onchange and onkeyup - multiple calls triggering despite debounce
@@ -53,6 +54,7 @@ function App() {
     }, []);
 
         return ( 
+          <Template Idx = 'Suggestions'>
           <div >
           <input type = "text"  onChange = {debouncedChangeHandler}/>
             <div> 
@@ -63,6 +65,7 @@ function App() {
             } 
             </div> 
           </div>
+          </Template>
         )
     }
 
